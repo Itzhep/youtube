@@ -3,8 +3,11 @@
 download and fetch youtube videos .
 
 [![NPM Version](https://img.shields.io/npm/v/youtube-toolkit.svg)](https://www.npmjs.com/package/youtube-toolkit)
-[![License](https://img.shields.io/npm/l/youtube-toolkit.svg)](https://github.com/itzhep/youtube/blob/main/LICENSE)
-[![Downloads](https://img.shields.io/npm/dt/youtube-toolkit.svg)](https://www.npmjs.com/package/youtube-toolkit)
+![License](https://img.shields.io/github/license/Itzhep/youtube)
+![NPM Downloads](https://img.shields.io/npm/dw/youtube-toolkit)
+![stars](https://img.shields.io/github/stars/Itzhep/youtube)
+
+
 
 ## Table of Contents
 
