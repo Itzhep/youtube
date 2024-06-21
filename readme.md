@@ -39,8 +39,11 @@ youtube.fetch("url") // fetch details about video by link
 ```
 ## Features
 ⭐ download video: download video from youtube from link.
+<br>
 ⭐ download tumbnail: download video tumbnail by link.
+<br>
 ⭐ download multiple videos : download multiple videos by links .
+<br>
 ⭐ fetch : fetch details about video by link .
 
 ## Contributing
