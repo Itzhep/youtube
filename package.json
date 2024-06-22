@@ -1,6 +1,6 @@
 {
   "name": "youtube-toolkit",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A comprehensive utility package for downloading videos, fetching details, downloading thumbnails, and batch downloading from YouTube.",
   "main": "index.js",
   "scripts": {

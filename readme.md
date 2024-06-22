@@ -6,6 +6,7 @@ download and fetch youtube videos .
 ![License](https://img.shields.io/github/license/Itzhep/youtube)
 ![NPM Downloads](https://img.shields.io/npm/dw/youtube-toolkit)
 ![stars](https://img.shields.io/github/stars/Itzhep/youtube)
+![last commit](https://img.shields.io/github/last-commit/Itzhep/youtube)
 
 
 
@@ -26,16 +27,22 @@ npm install youtube-toolkit
 ```javascript
 const youtube = require("youtube-toolkit")
 
-youtube.download("url") // download an video by link
+youtube.download("url", quality = 'highest') // download an video by link
+
 const urls = [ // url list of videos 
     url = "",
     url2 = ""
 ]
+
 youtube.batchDownload(urls , 2) // download multiple videos by link
 
 youtube.downloadThumbnail("url") // download video tumbnail by link
+
 youtube.fetch("url") // fetch details about video by link 
 
+youtube.downloadsubtitle('url', language = 'en') // download subtitle of a video 
+
+youtube.getChannelInfo("@channel id") // get information about a channel
 ```
 ## Features
 ⭐ download video: download video from youtube from link.
@@ -45,6 +52,10 @@ youtube.fetch("url") // fetch details about video by link
 ⭐ download multiple videos : download multiple videos by links .
 <br>
 ⭐ fetch : fetch details about video by link .
+<br>
+⭐ subtitle : download subtitle from video .
+<br> 
+⭐ getinfo : get info about a channel .
 
 ## Contributing
 Contributions are welcome! Here's how you can contribute to this project:
