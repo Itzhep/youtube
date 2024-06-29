@@ -4,7 +4,8 @@ download and fetch youtube videos .
 
 [![NPM Version](https://img.shields.io/npm/v/youtube-toolkit.svg)](https://www.npmjs.com/package/youtube-toolkit)
 ![License](https://img.shields.io/github/license/Itzhep/youtube)
-![NPM Downloads](https://img.shields.io/npm/dw/youtube-toolkit)
+![NPM Downloads](https://img.shields.io/npm/dm/youtube-toolkit)
+
 ![stars](https://img.shields.io/github/stars/Itzhep/youtube)
 ![last commit](https://img.shields.io/github/last-commit/Itzhep/youtube)
 <br>
