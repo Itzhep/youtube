@@ -1,27 +1,33 @@
-Run npm ci
-npm ERR! code EUSAGE
-npm ERR! 
-npm ERR! The `npm ci` command can only install with an existing package-lock.json or
-npm ERR! npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
-npm ERR! later to generate a package-lock.json file, then try again.
-npm ERR! 
-npm ERR! Clean install a project
-npm ERR! 
-npm ERR! Usage:
-npm ERR! npm ci
-npm ERR! 
-npm ERR! Options:
-npm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
-npm ERR! [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
-npm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
-npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
-npm ERR! 
-npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
-npm ERR! 
-npm ERR! Run "npm help ci" for more info
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-npm ERR! A complete log of this run can be found in:
-npm ERR!     /home/runner/.npm/_logs/2024-07-20T12_43_46_291Z-debug-0.log
+name: youtube-toolkit
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
